@@ -1,0 +1,93 @@
+{
+  "short_name": "AreBet",
+  "name": "AreBet Sports Analytics Platform",
+  "description": "Premium sports betting analytics with live match data and AI predictions",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0C0C0C",
+  "background_color": "#0C0C0C",
+  "categories": ["sports", "entertainment", "lifestyle"],
+  "lang": "en",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Live Matches",
+      "short_name": "Live",
+      "description": "View live football matches",
+      "url": "/live",
+      "icons": [
+        {
+          "src": "shortcuts/live-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Fixtures",
+      "short_name": "Fixtures",
+      "description": "Upcoming football fixtures",
+      "url": "/fixtures", 
+      "icons": [
+        {
+          "src": "shortcuts/fixtures-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "League Tables",
+      "short_name": "Tables",
+      "description": "Football league standings",
+      "url": "/table",
+      "icons": [
+        {
+          "src": "shortcuts/table-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/desktop-wide.png",
+      "type": "image/png",
+      "sizes": "1280x720",
+      "form_factor": "wide",
+      "label": "AreBet Desktop Dashboard"
+    },
+    {
+      "src": "screenshots/mobile-narrow.png", 
+      "type": "image/png",
+      "sizes": "375x667",
+      "form_factor": "narrow",
+      "label": "AreBet Mobile Interface"
+    }
+  ]
+}

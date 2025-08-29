@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/AreBet-Sports-Platform/static/css/main.826ad917.css",
+    "main.js": "/AreBet-Sports-Platform/static/js/main.f3a6ec7b.js",
+    "static/js/724.3c0b67b6.chunk.js": "/AreBet-Sports-Platform/static/js/724.3c0b67b6.chunk.js",
+    "static/js/231.b5b13556.chunk.js": "/AreBet-Sports-Platform/static/js/231.b5b13556.chunk.js",
+    "static/js/215.0b7d0811.chunk.js": "/AreBet-Sports-Platform/static/js/215.0b7d0811.chunk.js",
+    "static/js/293.4826494b.chunk.js": "/AreBet-Sports-Platform/static/js/293.4826494b.chunk.js",
+    "static/js/297.4dc338fc.chunk.js": "/AreBet-Sports-Platform/static/js/297.4dc338fc.chunk.js",
+    "static/js/198.d23def9b.chunk.js": "/AreBet-Sports-Platform/static/js/198.d23def9b.chunk.js",
+    "static/js/950.fe2b403a.chunk.js": "/AreBet-Sports-Platform/static/js/950.fe2b403a.chunk.js",
+    "index.html": "/AreBet-Sports-Platform/index.html",
+    "main.826ad917.css.map": "/AreBet-Sports-Platform/static/css/main.826ad917.css.map",
+    "main.f3a6ec7b.js.map": "/AreBet-Sports-Platform/static/js/main.f3a6ec7b.js.map",
+    "724.3c0b67b6.chunk.js.map": "/AreBet-Sports-Platform/static/js/724.3c0b67b6.chunk.js.map",
+    "231.b5b13556.chunk.js.map": "/AreBet-Sports-Platform/static/js/231.b5b13556.chunk.js.map",
+    "215.0b7d0811.chunk.js.map": "/AreBet-Sports-Platform/static/js/215.0b7d0811.chunk.js.map",
+    "293.4826494b.chunk.js.map": "/AreBet-Sports-Platform/static/js/293.4826494b.chunk.js.map",
+    "297.4dc338fc.chunk.js.map": "/AreBet-Sports-Platform/static/js/297.4dc338fc.chunk.js.map",
+    "198.d23def9b.chunk.js.map": "/AreBet-Sports-Platform/static/js/198.d23def9b.chunk.js.map",
+    "950.fe2b403a.chunk.js.map": "/AreBet-Sports-Platform/static/js/950.fe2b403a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.826ad917.css",
+    "static/js/main.f3a6ec7b.js"
+  ]
+}
