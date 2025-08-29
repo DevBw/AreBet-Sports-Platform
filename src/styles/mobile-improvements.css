@@ -1,0 +1,417 @@
+/* ===============================================
+   MOBILE RESPONSIVENESS IMPROVEMENTS
+   Enhanced mobile experience for AreBet
+   =============================================== */
+
+/* Touch-friendly interactions */
+@media (max-width: 768px) {
+  /* Larger touch targets */
+  button, a, .clickable {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+  }
+
+  /* Enhanced form inputs */
+  input, textarea, select {
+    min-height: 48px;
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: border-color 0.2s ease;
+  }
+
+  /* Container improvements */
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Match card enhancements */
+  .match-card, .match-card-pro {
+    margin-bottom: 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .match-card-header {
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .match-teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .team-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .team-logo {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+  }
+
+  .team-name {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+  .match-score {
+    font-size: 24px;
+    font-weight: 700;
+    color: #10b981;
+    white-space: nowrap;
+  }
+
+  /* Mobile navigation bar */
+  .mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(12, 12, 12, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 12px;
+    color: #666;
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.2s ease;
+    min-width: 60px;
+  }
+
+  .mobile-nav-item.active {
+    color: #10b981;
+  }
+
+  .mobile-nav-icon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 4px;
+  }
+
+  /* Table improvements */
+  .mobile-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-table table {
+    min-width: 100%;
+    font-size: 14px;
+  }
+
+  .mobile-table th,
+  .mobile-table td {
+    padding: 8px 6px;
+    white-space: nowrap;
+  }
+
+  /* Stats grid for mobile */
+  .stats-grid-mobile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .stat-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #10b981;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: #666;
+  }
+
+  /* Search component improvements */
+  .mobile-search {
+    position: sticky;
+    top: 0;
+    background: #1a1a1a;
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 100;
+  }
+
+  .search-input-pro, .mobile-search input {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 8px;
+  }
+
+  .search-input-pro::placeholder,
+  .mobile-search input::placeholder {
+    color: #666;
+  }
+
+  /* League selector improvements */
+  .league-selector-mobile {
+    display: flex;
+    overflow-x: auto;
+    padding: 16px;
+    gap: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .league-selector-mobile::-webkit-scrollbar {
+    display: none;
+  }
+
+  .league-badge {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    color: #666;
+    font-size: 12px;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    text-decoration: none;
+  }
+
+  .league-badge.active,
+  .league-badge:active {
+    background: #10b981;
+    color: #fff;
+    border-color: #10b981;
+  }
+
+  /* Sidebar improvements */
+  .sidebar {
+    max-width: 90vw;
+    border-radius: 0;
+  }
+
+  /* Typography adjustments */
+  h1 { font-size: 1.875rem; line-height: 1.2; }
+  h2 { font-size: 1.5rem; line-height: 1.3; }
+  h3 { font-size: 1.25rem; line-height: 1.4; }
+
+  /* Modal improvements */
+  .modal-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    z-index: 9999;
+    overflow-y: auto;
+  }
+
+  .modal-mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    background: #1a1a1a;
+    z-index: 10;
+  }
+
+  /* Loading skeletons */
+  .mobile-skeleton {
+    background: linear-gradient(90deg, 
+      rgba(255, 255, 255, 0.03) 25%, 
+      rgba(255, 255, 255, 0.06) 50%, 
+      rgba(255, 255, 255, 0.03) 75%
+    );
+    background-size: 200% 100%;
+    animation: mobile-shimmer 1.5s infinite;
+    border-radius: 8px;
+  }
+
+  .mobile-skeleton-text {
+    height: 16px;
+    margin-bottom: 8px;
+  }
+
+  .mobile-skeleton-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+}
+
+/* Landscape mobile */
+@media (max-width: 926px) and (orientation: landscape) {
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  
+  .fixed.inset-0 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .ios-fix {
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+  
+  input[type="search"] {
+    -webkit-appearance: textfield;
+  }
+}
+
+/* Focus improvements for mobile */
+@media (max-width: 768px) {
+  *:focus {
+    outline: 2px solid #FCD34D;
+    outline-offset: 2px;
+  }
+  
+  /* Remove hover effects on touch devices */
+  @media (hover: none) and (pointer: coarse) {
+    .hover\:scale-105:hover,
+    .hover\:transform:hover {
+      transform: none;
+    }
+    
+    .hover\:bg-gray-700:hover,
+    .hover\:bg-opacity-10:hover {
+      background-color: inherit;
+    }
+    
+    /* Disable all hover states on touch devices */
+    *:hover {
+      background-color: inherit !important;
+      transform: none !important;
+      opacity: inherit !important;
+    }
+  }
+  
+  /* Better focus states for touch navigation */
+  button:focus,
+  .btn:focus {
+    transform: scale(1.02);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Additional mobile utilities */
+@keyframes mobile-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.mobile-only {
+  display: block;
+}
+
+.desktop-only {
+  display: none;
+}
+
+/* Safe area handling for devices with notches */
+.safe-area-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Dark mode adjustments for mobile */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+  body {
+    background-color: #111827;
+  }
+  
+  .mobile-safe-area {
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Tablet improvements */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .grid-tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+}
+
+/* Large screens - hide mobile-only elements */
+@media (min-width: 1025px) {
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .team-logo,
+  .league-logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}

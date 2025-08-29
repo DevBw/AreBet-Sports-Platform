@@ -1,0 +1,389 @@
+/* ===============================================
+   AREBET ALIGNMENT & SPACING FIXES
+   Comprehensive alignment fixes for consistent UI
+   =============================================== */
+
+/* ===============================================
+   GLOBAL ALIGNMENT UTILITIES
+   =============================================== */
+
+/* Flex alignment improvements */
+.flex-center-all {
+  @apply flex items-center justify-center;
+}
+
+.flex-between-center {
+  @apply flex items-center justify-between;
+}
+
+.flex-start-center {
+  @apply flex items-center justify-start;
+}
+
+.flex-end-center {
+  @apply flex items-center justify-end;
+}
+
+/* Grid alignment utilities */
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.grid-auto-fill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* ===============================================
+   CONSISTENT SPACING SYSTEM
+   =============================================== */
+
+/* Standard component spacing */
+.component-padding {
+  @apply px-4 py-3;
+}
+
+.component-padding-lg {
+  @apply px-6 py-4;
+}
+
+.component-margin {
+  @apply mx-4 my-3;
+}
+
+.component-gap {
+  @apply gap-4;
+}
+
+.component-gap-sm {
+  @apply gap-3;
+}
+
+.component-gap-lg {
+  @apply gap-6;
+}
+
+/* ===============================================
+   CARD COMPONENT STANDARDIZATION
+   =============================================== */
+
+.card-standard {
+  @apply bg-gray-900/50 border border-gray-600 rounded-lg p-4 backdrop-blur-sm;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-standard:hover {
+  @apply border-yellow-500/50 shadow-lg;
+  transform: translateY(-2px);
+}
+
+.card-compact {
+  @apply bg-gray-900/50 border border-gray-600 rounded-md p-3 backdrop-blur-sm;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-content-spacing {
+  @apply space-y-3;
+}
+
+.card-header-spacing {
+  @apply mb-4;
+}
+
+/* ===============================================
+   TEXT ALIGNMENT & VISIBILITY
+   =============================================== */
+
+.text-align-center-all {
+  @apply text-center;
+}
+
+.text-align-center-all * {
+  @apply text-center;
+}
+
+.text-visible-enhanced {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.text-visible-strong-enhanced {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+  color: #FFD700;
+  font-weight: 700;
+}
+
+/* ===============================================
+   ICON ALIGNMENT FIXES
+   =============================================== */
+
+.icon-aligned {
+  @apply flex-shrink-0 flex items-center justify-center;
+}
+
+.icon-text-aligned {
+  @apply flex items-center space-x-2;
+}
+
+.icon-text-aligned svg {
+  @apply flex-shrink-0;
+}
+
+/* Team logo specific alignment */
+.team-logo-container {
+  @apply flex-shrink-0 flex items-center justify-center;
+  width: 32px;
+  height: 32px;
+}
+
+.team-logo-container img {
+  @apply w-full h-full object-contain rounded border border-gray-600;
+}
+
+/* ===============================================
+   BUTTON ALIGNMENT STANDARDIZATION
+   =============================================== */
+
+.btn-aligned {
+  @apply inline-flex items-center justify-center space-x-2 px-4 py-2 rounded-lg font-semibold transition-all duration-200;
+  min-height: 2.5rem;
+}
+
+.btn-aligned-sm {
+  @apply inline-flex items-center justify-center space-x-1.5 px-3 py-1.5 rounded-md font-medium transition-all duration-200;
+  min-height: 2rem;
+}
+
+/* ===============================================
+   HEADER & NAVIGATION ALIGNMENT
+   =============================================== */
+
+.header-content-aligned {
+  @apply flex items-center justify-between h-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.nav-item-aligned {
+  @apply flex items-center space-x-2 px-3 py-2 rounded-md font-semibold text-sm transition-all duration-200;
+}
+
+.nav-item-aligned:hover {
+  @apply bg-yellow-400/10 text-yellow-400;
+}
+
+.nav-item-aligned.active {
+  @apply bg-yellow-400/20 text-yellow-400;
+}
+
+/* ===============================================
+   RESPONSIVE GRID ALIGNMENT FIXES
+   =============================================== */
+
+.matches-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+@media (min-width: 768px) {
+  .matches-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .matches-grid {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .matches-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* ===============================================
+   FORM ELEMENT ALIGNMENT
+   =============================================== */
+
+.form-group-aligned {
+  @apply space-y-2 mb-4;
+}
+
+.form-input-aligned {
+  @apply w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md text-white placeholder-gray-400;
+  @apply focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 focus:outline-none;
+  transition: all 0.2s ease;
+}
+
+.form-label-aligned {
+  @apply block text-sm font-semibold text-gray-300 mb-2;
+}
+
+/* ===============================================
+   MODAL & OVERLAY ALIGNMENT
+   =============================================== */
+
+.modal-content-aligned {
+  @apply max-w-md w-full mx-4 bg-gray-900 rounded-lg p-6 shadow-xl;
+}
+
+.modal-header-aligned {
+  @apply flex items-center justify-between mb-4;
+}
+
+.modal-body-aligned {
+  @apply space-y-4 mb-6;
+}
+
+.modal-footer-aligned {
+  @apply flex items-center justify-end space-x-3;
+}
+
+/* ===============================================
+   TABLE ALIGNMENT FIXES
+   =============================================== */
+
+.table-aligned {
+  @apply w-full border-collapse;
+}
+
+.table-aligned th {
+  @apply px-4 py-3 text-left font-semibold text-gray-300 border-b border-gray-600;
+}
+
+.table-aligned td {
+  @apply px-4 py-3 text-gray-100 border-b border-gray-700;
+}
+
+.table-row-aligned {
+  @apply hover:bg-gray-800/50 transition-colors duration-200;
+}
+
+/* ===============================================
+   LOADING & SKELETON ALIGNMENT
+   =============================================== */
+
+.loading-container-aligned {
+  @apply flex items-center justify-center min-h-[200px] space-x-3;
+}
+
+.skeleton-aligned {
+  @apply animate-pulse bg-gray-700 rounded;
+}
+
+.skeleton-text {
+  @apply h-4 bg-gray-700 rounded;
+}
+
+.skeleton-avatar {
+  @apply w-10 h-10 bg-gray-700 rounded-full;
+}
+
+/* ===============================================
+   BADGE & TAG ALIGNMENT
+   =============================================== */
+
+.badge-aligned {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+}
+
+.tag-aligned {
+  @apply inline-flex items-center px-3 py-1 rounded-md text-sm font-medium;
+}
+
+/* ===============================================
+   MOBILE-SPECIFIC ALIGNMENT FIXES
+   =============================================== */
+
+@media (max-width: 767px) {
+  .mobile-stack-aligned {
+    @apply flex flex-col space-y-3;
+  }
+  
+  .mobile-full-width {
+    @apply w-full;
+  }
+  
+  .mobile-centered {
+    @apply flex flex-col items-center space-y-2;
+  }
+  
+  .mobile-nav-aligned {
+    @apply flex items-center justify-around py-3;
+  }
+  
+  .mobile-nav-item {
+    @apply flex flex-col items-center space-y-1 px-3 py-2 rounded-md;
+  }
+}
+
+/* ===============================================
+   UTILITY OVERRIDES FOR CRITICAL ALIGNMENT
+   =============================================== */
+
+.force-center {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.force-flex-start {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
+
+.force-flex-between {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+/* Text truncation with proper alignment */
+.truncate-aligned {
+  @apply truncate min-w-0 flex-1;
+}
+
+/* Image alignment fixes */
+.img-centered {
+  @apply block mx-auto;
+}
+
+.img-cover-centered {
+  @apply object-cover object-center;
+}
+
+/* ===============================================
+   ANIMATION ALIGNMENT FIXES
+   =============================================== */
+
+.hover-lift-aligned {
+  transition: all 0.2s ease;
+}
+
+.hover-lift-aligned:hover {
+  transform: translateY(-2px);
+}
+
+.hover-scale-aligned {
+  transition: all 0.2s ease;
+}
+
+.hover-scale-aligned:hover {
+  transform: scale(1.02);
+}
+
+/* ===============================================
+   Z-INDEX MANAGEMENT
+   =============================================== */
+
+.z-header { z-index: 50; }
+.z-dropdown { z-index: 100; }
+.z-modal { z-index: 1000; }
+.z-tooltip { z-index: 1050; }
+.z-notification { z-index: 1100; }

@@ -1,0 +1,173 @@
+# ===============================================
+# DOCKER COMPOSE FOR AREBET DEVELOPMENT
+# Complete development environment setup
+# ===============================================
+
+version: '3.8'
+
+services:
+  # AreBet Web Application
+  arebet-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - REACT_APP_SUPABASE_URL=${REACT_APP_SUPABASE_URL}
+        - REACT_APP_SUPABASE_ANON_KEY=${REACT_APP_SUPABASE_ANON_KEY}
+        - REACT_APP_RAPIDAPI_KEY=${REACT_APP_RAPIDAPI_KEY}
+        - REACT_APP_ENVIRONMENT=production
+    container_name: arebet-web
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - arebet-network
+
+  # Development version with hot reload
+  arebet-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: arebet-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - REACT_APP_SUPABASE_URL=${REACT_APP_SUPABASE_URL}
+      - REACT_APP_SUPABASE_ANON_KEY=${REACT_APP_SUPABASE_ANON_KEY}
+      - REACT_APP_RAPIDAPI_KEY=${REACT_APP_RAPIDAPI_KEY}
+      - REACT_APP_ENVIRONMENT=development
+    command: npm start
+    networks:
+      - arebet-network
+    profiles:
+      - development
+
+  # Nginx reverse proxy (optional)
+  nginx-proxy:
+    image: nginx:alpine
+    container_name: arebet-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx-proxy.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - arebet-web
+    restart: unless-stopped
+    networks:
+      - arebet-network
+    profiles:
+      - production-proxy
+
+  # PostgreSQL (if not using Supabase)
+  postgres:
+    image: postgres:15-alpine
+    container_name: arebet-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=arebet
+      - POSTGRES_USER=arebet
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-changeme}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./sample-data.sql:/docker-entrypoint-initdb.d/02-data.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U arebet"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - arebet-network
+    profiles:
+      - local-db
+
+  # Redis for caching (optional)
+  redis:
+    image: redis:7-alpine
+    container_name: arebet-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-changeme}
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    networks:
+      - arebet-network
+    profiles:
+      - caching
+
+  # Monitoring with Prometheus (optional)
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: arebet-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    networks:
+      - arebet-network
+    profiles:
+      - monitoring
+
+  # Grafana for dashboards (optional)
+  grafana:
+    image: grafana/grafana:latest
+    container_name: arebet-grafana
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin}
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources:ro
+    depends_on:
+      - prometheus
+    networks:
+      - arebet-network
+    profiles:
+      - monitoring
+
+networks:
+  arebet-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local

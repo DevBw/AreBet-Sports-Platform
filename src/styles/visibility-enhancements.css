@@ -1,0 +1,221 @@
+/* ===============================================
+   VISIBILITY ENHANCEMENTS FOR AREBET PLATFORM
+   Enhanced contrast and accessibility
+   =============================================== */
+
+/* Force high contrast text visibility */
+.text-visible-strong {
+  color: #FFD700 !important; /* Force yellow text */
+  font-weight: 700 !important;
+  text-shadow: 0 0 4px rgba(255, 215, 0, 0.5) !important;
+}
+
+.text-visible-white {
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.3) !important;
+}
+
+.text-visible-black {
+  color: #000000 !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+}
+
+/* Enhanced button visibility */
+.btn-visible-primary {
+  background-color: #FFD700 !important;
+  color: #000000 !important;
+  border: 2px solid #FFD700 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3) !important;
+}
+
+.btn-visible-primary:hover {
+  background-color: #FFC107 !important;
+  box-shadow: 0 6px 16px rgba(255, 215, 0, 0.4) !important;
+  transform: translateY(-1px) !important;
+}
+
+.btn-visible-secondary {
+  background-color: transparent !important;
+  color: #FFD700 !important;
+  border: 2px solid #FFD700 !important;
+  font-weight: 600 !important;
+}
+
+.btn-visible-secondary:hover {
+  background-color: rgba(255, 215, 0, 0.2) !important;
+  color: #FFED4E !important;
+  border-color: #FFED4E !important;
+}
+
+/* Navigation improvements */
+.nav-item-visible {
+  color: #FFD700 !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(255, 215, 0, 0.3) !important;
+  background-color: rgba(255, 215, 0, 0.05) !important;
+  padding: 8px 16px !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.nav-item-visible:hover {
+  background-color: rgba(255, 215, 0, 0.15) !important;
+  border-color: #FFD700 !important;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2) !important;
+}
+
+.nav-item-active {
+  background-color: #FFD700 !important;
+  color: #000000 !important;
+  border-color: #FFD700 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 12px rgba(255, 215, 0, 0.4) !important;
+}
+
+/* Header enhancements */
+.header-enhanced {
+  background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%) !important;
+  border-bottom: 3px solid #FFD700 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Logo enhancement */
+.logo-enhanced {
+  color: #FFD700 !important;
+  font-weight: 800 !important;
+  font-size: 2rem !important;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8) !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Mobile navigation fixes */
+@media (max-width: 768px) {
+  .mobile-nav-enhanced {
+    background-color: #000000 !important;
+    border-top: 2px solid #FFD700 !important;
+    padding: 16px 8px !important;
+  }
+  
+  .mobile-nav-item {
+    color: #FFD700 !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    text-align: center !important;
+  }
+  
+  .mobile-nav-item.active {
+    background-color: #FFD700 !important;
+    color: #000000 !important;
+    border-radius: 8px !important;
+    padding: 8px 4px !important;
+  }
+}
+
+/* Responsive visibility classes */
+.show-on-mobile {
+  display: none !important;
+}
+
+.show-on-desktop {
+  display: block !important;
+}
+
+@media (max-width: 768px) {
+  .show-on-mobile {
+    display: block !important;
+  }
+  
+  .show-on-desktop {
+    display: none !important;
+  }
+  
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
+}
+
+/* Fix for hidden elements */
+.force-visible {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Enhanced contrast for cards and content */
+.card-enhanced {
+  background: linear-gradient(145deg, rgba(26, 26, 26, 0.98), rgba(42, 42, 42, 0.95)) !important;
+  border: 1px solid rgba(255, 215, 0, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+}
+
+.card-enhanced:hover {
+  border-color: rgba(255, 215, 0, 0.4) !important;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Text readability improvements */
+.text-readable {
+  color: #FFFFFF !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.text-readable-light {
+  color: #CCCCCC !important;
+  font-weight: 400 !important;
+}
+
+.text-readable-muted {
+  color: #999999 !important;
+  font-weight: 400 !important;
+}
+
+/* Fix for invisible elements issue */
+* {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .text-visible-strong {
+    color: #FFFFFF !important;
+    background-color: #000000 !important;
+    padding: 2px 4px !important;
+  }
+  
+  .btn-visible-primary {
+    border-width: 3px !important;
+  }
+  
+  .nav-item-visible {
+    border-width: 2px !important;
+  }
+}
+
+/* Animation for better UX */
+.fade-in {
+  animation: fadeInUp 0.5s ease-out !important;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
